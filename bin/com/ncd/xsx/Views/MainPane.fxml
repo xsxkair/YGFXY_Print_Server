@@ -1,0 +1,279 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXButton?>
+<?import com.jfoenix.controls.JFXComboBox?>
+<?import com.jfoenix.controls.JFXDialog?>
+<?import com.jfoenix.controls.JFXDialogLayout?>
+<?import com.jfoenix.controls.JFXSpinner?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.Cursor?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Menu?>
+<?import javafx.scene.control.MenuBar?>
+<?import javafx.scene.control.MenuItem?>
+<?import javafx.scene.control.RadioButton?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.control.ToggleGroup?>
+<?import javafx.scene.control.Tooltip?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.RowConstraints?>
+<?import javafx.scene.layout.StackPane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="800.0" prefWidth="607.0" xmlns="http://javafx.com/javafx/8.0.141" xmlns:fx="http://javafx.com/fxml/1">
+   <children>
+      <MenuBar AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+        <menus>
+            <Menu mnemonicParsing="false" text="报告">
+              <items>
+                <MenuItem fx:id="CommitReportMenuItem" mnemonicParsing="false" text="提交报告" />
+              </items>
+            </Menu>
+          <Menu mnemonicParsing="false" text="帮助">
+            <items>
+              <MenuItem fx:id="HelpMenuItem" mnemonicParsing="false" text="帮助" />
+            </items>
+          </Menu>
+        </menus>
+      </MenuBar>
+      <StackPane fx:id="ContentStackPane" prefHeight="150.0" prefWidth="200.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="25.0">
+         <children>
+            <JFXDialog fx:id="myDialog" overlayClose="false">
+               <content>
+                  <JFXDialogLayout>
+                     <heading>
+                        <Label text="警告" />
+                     </heading>
+                     <body>
+                        <Label text="报告提交失败！" />
+                     </body>
+                     <actions>
+                        <JFXButton fx:id="acceptButton" styleClass="dialog-accept" text="关闭" />
+                     </actions>
+                  </JFXDialogLayout>
+               </content>
+            </JFXDialog>
+            <AnchorPane fx:id="CommitReportPane" prefHeight="200.0" prefWidth="200.0">
+               <children>
+                  <GridPane vgap="5.0" AnchorPane.leftAnchor="20.0" AnchorPane.topAnchor="20.0">
+                    <columnConstraints>
+                      <ColumnConstraints halignment="LEFT" hgrow="SOMETIMES" minWidth="10.0" prefWidth="180.0" />
+                      <ColumnConstraints halignment="LEFT" hgrow="SOMETIMES" minWidth="10.0" />
+                    </columnConstraints>
+                    <rowConstraints>
+                      <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                        <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                        <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                        <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                        <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                        <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                        <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                      <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                      <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                        <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                        <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                        <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                        <RowConstraints maxHeight="-Infinity" minHeight="10.0" vgrow="SOMETIMES" />
+                    </rowConstraints>
+                     <children>
+                        <Label text="测试时间（必填）：">
+                           <font>
+                              <Font name="System Bold" size="16.0" />
+                           </font>
+                        </Label>
+                        <Label text="样本编号（必填）：" GridPane.rowIndex="1">
+                           <font>
+                              <Font size="16.0" />
+                           </font>
+                        </Label>
+                        <Label text="样本类型 ：" GridPane.rowIndex="2">
+                           <font>
+                              <Font size="16.0" />
+                           </font>
+                        </Label>
+                        <Label text="测试类型 ：" GridPane.rowIndex="3">
+                           <font>
+                              <Font size="16.0" />
+                           </font>
+                        </Label>
+                        <Label text="项目名称 ：" GridPane.rowIndex="4">
+                           <font>
+                              <Font size="16.0" />
+                           </font>
+                        </Label>
+                        <Label text="测试结果值 ：" GridPane.rowIndex="5">
+                           <font>
+                              <Font size="16.0" />
+                           </font>
+                        </Label>
+                        <Label text="项目单位 ：" GridPane.rowIndex="6">
+                           <font>
+                              <Font size="16.0" />
+                           </font>
+                        </Label>
+                        <Label text="结果异常标志 ：" GridPane.rowIndex="7">
+                           <font>
+                              <Font size="16.0" />
+                           </font>
+                        </Label>
+                        <Label text="参考值 ：" GridPane.rowIndex="8">
+                           <font>
+                              <Font size="16.0" />
+                           </font>
+                        </Label>
+                        <Label text="设备编号 ：" GridPane.rowIndex="9">
+                           <font>
+                              <Font size="16.0" />
+                           </font>
+                        </Label>
+                        <Label text="错误信息 ：" GridPane.rowIndex="10">
+                           <font>
+                              <Font size="16.0" />
+                           </font>
+                        </Label>
+                        <Label text="结果备注 ：" GridPane.rowIndex="11">
+                           <font>
+                              <Font size="16.0" />
+                           </font>
+                        </Label>
+                        <HBox alignment="CENTER_LEFT" prefHeight="100.0" GridPane.columnIndex="1">
+                           <children>
+                              <TextField fx:id="YearLabel" alignment="CENTER" minWidth="-Infinity" prefColumnCount="4" promptText="年" />
+                              <Label alignment="BOTTOM_CENTER" text="-" textAlignment="CENTER">
+                                 <HBox.margin>
+                                    <Insets left="5.0" right="5.0" />
+                                 </HBox.margin>
+                              </Label>
+                              <TextField fx:id="MonthLabel" alignment="CENTER" minWidth="-Infinity" prefColumnCount="2" promptText="月" />
+                              <Label text="-">
+                                 <HBox.margin>
+                                    <Insets left="5.0" right="5.0" />
+                                 </HBox.margin>
+                              </Label>
+                              <TextField fx:id="DayLabel" alignment="CENTER" minWidth="-Infinity" prefColumnCount="2" promptText="日">
+                                 <HBox.margin>
+                                    <Insets right="20.0" />
+                                 </HBox.margin>
+                              </TextField>
+                              <TextField fx:id="HourLabel" alignment="CENTER" minWidth="-Infinity" prefColumnCount="2" promptText="时" />
+                              <Label text=":">
+                                 <HBox.margin>
+                                    <Insets left="5.0" right="5.0" />
+                                 </HBox.margin>
+                              </Label>
+                              <TextField fx:id="MinLabel" alignment="CENTER" minWidth="-Infinity" prefColumnCount="2" promptText="分" />
+                              <Label text=":">
+                                 <HBox.margin>
+                                    <Insets left="5.0" right="5.0" />
+                                 </HBox.margin>
+                              </Label>
+                              <TextField fx:id="SecLabel" alignment="CENTER" minWidth="-Infinity" prefColumnCount="2" promptText="秒">
+                                 <HBox.margin>
+                                    <Insets right="20.0" />
+                                 </HBox.margin>
+                              </TextField>
+                              <HBox alignment="CENTER">
+                                 <children>
+                                    <JFXButton fx:id="CurrentTimeButton" alignment="BOTTOM_RIGHT" maxHeight="10.0" maxWidth="10.0" minHeight="10.0" minWidth="10.0" prefHeight="10.0" prefWidth="10.0" style="-fx-background-color: lightcoral; -fx-background-radius: 10;" textAlignment="JUSTIFY">
+                                       <font>
+                                          <Font size="10.0" />
+                                       </font>
+                                       <tooltip>
+                                          <Tooltip text="以当前时间作为测试时间">
+                                             <font>
+                                                <Font size="18.0" />
+                                             </font>
+                                          </Tooltip>
+                                       </tooltip>
+                                       <cursor>
+                                          <Cursor fx:constant="HAND" />
+                                       </cursor>
+                                    </JFXButton>
+                                 </children>
+                              </HBox>
+                           </children>
+                        </HBox>
+                        <TextField fx:id="SampleIdLabel" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+                        <HBox alignment="CENTER_LEFT" prefHeight="100.0" prefWidth="200.0" spacing="20.0" GridPane.columnIndex="1" GridPane.rowIndex="2">
+                           <children>
+                              <RadioButton fx:id="BloodToggleButton" mnemonicParsing="false" selected="true" text="全血">
+                                 <toggleGroup>
+                                    <ToggleGroup fx:id="SampleTypeToggleGroup" />
+                                 </toggleGroup>
+                              </RadioButton>
+                              <RadioButton fx:id="SerumToggleButton" mnemonicParsing="false" text="血清" toggleGroup="$SampleTypeToggleGroup" />
+                              <RadioButton fx:id="PlasmaToggleButton" mnemonicParsing="false" text="血浆" toggleGroup="$SampleTypeToggleGroup" />
+                           </children>
+                        </HBox>
+                        <HBox alignment="CENTER_LEFT" prefHeight="100.0" prefWidth="200.0" spacing="20.0" GridPane.columnIndex="1" GridPane.rowIndex="3">
+                           <children>
+                              <RadioButton fx:id="NormalToggleButton" mnemonicParsing="false" selected="true" text="常规">
+                                 <toggleGroup>
+                                    <ToggleGroup fx:id="TestTypeToggleGroup" />
+                                 </toggleGroup>
+                              </RadioButton>
+                              <RadioButton fx:id="JizhenToggleButton" mnemonicParsing="false" text="急诊" toggleGroup="$TestTypeToggleGroup" />
+                              <RadioButton fx:id="ZhikongToggleButton" mnemonicParsing="false" text="质控" toggleGroup="$TestTypeToggleGroup" />
+                           </children>
+                        </HBox>
+                        <JFXComboBox fx:id="ItemNameJFXComboBox" prefWidth="162.0" GridPane.columnIndex="1" GridPane.rowIndex="4" />
+                        <TextField fx:id="TestValueLabel" GridPane.columnIndex="1" GridPane.rowIndex="5" />
+                        <JFXComboBox fx:id="TestDanweiJFXComboBox" prefWidth="162.0" GridPane.columnIndex="1" GridPane.rowIndex="6" />
+                        <TextField fx:id="ErrorInfoLabel" GridPane.columnIndex="1" GridPane.rowIndex="10" />
+                        <TextField fx:id="ResultDescLabel" GridPane.columnIndex="1" GridPane.rowIndex="11" />
+                        <HBox alignment="CENTER_RIGHT" GridPane.columnSpan="2" GridPane.rowIndex="12">
+                           <children>
+                              <JFXButton fx:id="CommitButton" prefHeight="35.0" prefWidth="100.0" ripplerFill="#0297f0" style="-fx-background-color: mediumaquamarine;" text="提交">
+                                 <cursor>
+                                    <Cursor fx:constant="HAND" />
+                                 </cursor>
+                                 <tooltip>
+                                    <Tooltip text="提交报告到POCT系统">
+                                       <font>
+                                          <Font size="18.0" />
+                                       </font>
+                                    </Tooltip>
+                                 </tooltip>
+                              </JFXButton>
+                           </children>
+                           <GridPane.margin>
+                              <Insets />
+                           </GridPane.margin>
+                           <padding>
+                              <Insets bottom="10.0" top="20.0" />
+                           </padding>
+                        </HBox>
+                        <TextField fx:id="CanKaoZhiLabel" GridPane.columnIndex="1" GridPane.rowIndex="8" />
+                        <TextField fx:id="DeviceIdLabel" GridPane.columnIndex="1" GridPane.rowIndex="9" />
+                        <TextField fx:id="ErrorTypeLabel" GridPane.columnIndex="1" GridPane.rowIndex="7" />
+                     </children>
+                  </GridPane>
+               </children>
+            </AnchorPane>
+            <AnchorPane fx:id="HelpPane" prefHeight="200.0" prefWidth="200.0" visible="false">
+               <children>
+                  <ImageView fitHeight="340.0" fitWidth="638.0" layoutX="14.0" layoutY="25.0" pickOnBounds="true" preserveRatio="true" AnchorPane.leftAnchor="10.0" AnchorPane.rightAnchor="10.0" AnchorPane.topAnchor="10.0">
+                     <image>
+                        <Image url="@../../../../RES/help.png" />
+                     </image>
+                  </ImageView>
+               </children></AnchorPane>
+         </children>
+      </StackPane>
+      <VBox fx:id="GB_FreshPane" alignment="CENTER" layoutX="30.0" layoutY="30.0" spacing="10.0" style="-fx-background-color: rgba(0, 0, 0, 0.2);" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+         <children>
+            <JFXSpinner radius="30.0" startingAngle="0.0" style="-fx-radius: 20;" />
+            <Label text="数据提交中。。。" />
+         </children>
+         <cursor>
+            <Cursor fx:constant="WAIT" />
+         </cursor>
+      </VBox>
+   </children>
+</AnchorPane>

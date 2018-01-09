@@ -1,0 +1,32 @@
+package com.ncd.xsx.Entity;
+
+import com.j256.ormlite.field.DatabaseField;
+import com.jfoenix.controls.JFXTextField;
+
+import javafx.fxml.FXML;
+
+public class Report {
+
+	@DatabaseField(generatedId = true, allowGeneratedIdInsert = true) 
+	private Integer id;
+	
+	private String name;
+	
+	private String sex;
+	private String ageTextField;
+	private String sickIdTextField;
+	private String departmentTextField;
+	private String chuanghaoTextField;
+	private String bloodTypeTextField;
+	private String deviceTextField;
+	private String barcodeTextField;
+	private String sendDoctorTextField;
+	private String sickdescTextField;
+	private String gettimeTextField;
+	
+	private String descTextField;
+	private String recvTimeTextField;
+	private String reportTimeTextField;
+	private String checkerTextField;
+	private String recheckerTextField;
+}
